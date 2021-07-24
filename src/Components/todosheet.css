@@ -1,0 +1,17 @@
+.sheet {
+    min-height: 600px;
+    width: 800px;
+    background: repeating-linear-gradient(
+  white, white 48px,
+  #9198e5 49px, #9198e5 50px
+ );
+}
+.text {
+position: relative;
+ top: 3px;
+ font-size: 36px;
+ margin: 0 20px;
+ font-family: cursive;
+ line-height: 50px;
+ text-align: left;
+}
