@@ -1,17 +1,42 @@
 .sheet {
-    min-height: 600px;
-    width: 800px;
-    background: repeating-linear-gradient(
-  white, white 48px,
-  #9198e5 49px, #9198e5 50px
- );
+  min-height: 800px;
+  width: 600px;
+  background: repeating-linear-gradient(
+    white,
+    white 48px,
+    #9198e5 49px,
+    #9198e5 50px
+  );
 }
 .text {
-position: relative;
- top: 3px;
- font-size: 36px;
- margin: 0 20px;
- font-family: cursive;
- line-height: 50px;
- text-align: left;
+  position: relative;
+  top: 3px;
+  font-size: 36px;
+  margin: 0 20px;
+  font-family: cursive;
+  font-weight: 200;
+  line-height: 50px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.single_task {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.check-icon {
+  color: green;
+  font-size: 1em;
+  margin-right: 10px;
+  z-index: 1;
+}
+.delete-icon {
+  color: red;
+  font-size: 1em;
+}
+.check-icon:hover,
+.delete-icon:hover {
+  font-size: 1.2em;
 }
