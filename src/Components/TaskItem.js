@@ -14,6 +14,17 @@ function TaskItem({ task }) {
 
   const handleDelete = (event, id) => {
     setTasks(tasks.filter((task) => task.id !== id));
+    deleteTaskInServer(id);
+  };
+  const deleteTaskInServer = async (id) => {
+    fetch("http://127.0.0.1:5000/delete", {
+      method: "PUT", // or 'POST'
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(id),
+      mode: "cors",
+    });
   };
 
   return (

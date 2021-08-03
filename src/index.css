@@ -1,9 +1,7 @@
 .App {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   flex: 1;
-
 }
 #root {
   display: flex;
@@ -11,7 +9,8 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: #abc4ff;
+  background-color: #e2e8f0;
+  font-family: Cambria;
 }
 * {
   margin: 0;

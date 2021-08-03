@@ -2,14 +2,16 @@ import "./App.css";
 import AddTask from "./Components/AddTask";
 import TodoSheet from "./Components/TodoSheet";
 import { TasksContextProvider } from "./Components/TasksContext";
-import axios from "axios";
-import { useEffect } from "react";
+import Navbar from "./Components/Navbar";
 function App() {
   return (
     <TasksContextProvider>
       <div className="App">
-        <AddTask />
-        <TodoSheet />
+        <Navbar />
+        <div className="container">
+          <AddTask />
+          <TodoSheet />
+        </div>
       </div>
     </TasksContextProvider>
   );

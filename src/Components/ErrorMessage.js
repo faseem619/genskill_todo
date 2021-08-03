@@ -1,9 +1,15 @@
 import React from "react";
-import "./addtask.css";
-function ErrorMessage({ setShowError }) {
+import "./CSS/addtask.css";
+import { ImCross } from "react-icons/im";
+function ErrorMessage({ setShowError, content }) {
   return (
     <div className="error" onClick={() => setShowError(false)}>
-      Please Enter all values
+      <div className="modal">
+        <h1> {content}</h1>
+        <button className="close-btn">
+          <ImCross />
+        </button>
+      </div>
     </div>
   );
 }

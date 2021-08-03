@@ -7,6 +7,7 @@
     #9198e5 49px,
     #9198e5 50px
   );
+  box-shadow: 20px 12px 2px 1px rgba(0, 0, 255, 0.2);
 }
 .text {
   position: relative;
@@ -20,6 +21,7 @@
   display: flex;
   flex-direction: column;
   align-items: stretch;
+  transition: all 0.5s linear;
 }
 .single_task {
   display: flex;
@@ -28,15 +30,25 @@
 }
 .check-icon {
   color: green;
-  font-size: 1em;
+
   margin-right: 10px;
+}
+.check-icon,
+.delete-icon {
   z-index: 1;
+  transition: all 0.3s ease-in-out;
+  font-size: 0.7em;
 }
 .delete-icon {
   color: red;
-  font-size: 1em;
 }
 .check-icon:hover,
 .delete-icon:hover {
-  font-size: 1.2em;
+  font-size: 1em;
+  cursor: pointer;
+}
+@media screen and (max-width: 800px) {
+  .sheet {
+    width: 100%;
+  }
 }

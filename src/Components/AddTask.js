@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { TasksContext } from "./TasksContext";
-import "./addtask.css";
+import "./CSS/addtask.css";
 import ErrorMessage from "./ErrorMessage";
 function AddTask() {
   const [newTask, setNewTask] = useState("");
@@ -17,6 +17,7 @@ function AddTask() {
     setTasks([...tasks, { id, title: newTask, date }]);
     addTaskToServer({ id, title: newTask, date });
     setNewTask("");
+    setDate("");
   };
   const addTaskToServer = async (data) => {
     fetch("http://127.0.0.1:5000/add", {
@@ -30,8 +31,14 @@ function AddTask() {
   };
   return (
     <div className="addtask_container">
-      {showError && <ErrorMessage setShowError={setShowError} />}
-      <div>
+      {showError && (
+        <ErrorMessage
+          setShowError={setShowError}
+          content="Please Fill All Necessary Fields"
+        />
+      )}
+      <h1>Add New Tasks Here </h1>
+      <div className="newtask_container">
         <input
           type="text"
           className="new_task"
@@ -41,7 +48,9 @@ function AddTask() {
         />
       </div>
       <div>
-        <label for="birthday">Date:</label>
+        <label for="birthday" className="date_label">
+          Date:
+        </label>
         <input
           type="date"
           className="task-date"
