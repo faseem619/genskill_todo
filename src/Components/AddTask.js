@@ -29,40 +29,42 @@ function AddTask() {
       mode: "cors",
     });
   };
-  return (
-    <div className="addtask_container">
-      {showError && (
-        <ErrorMessage
-          setShowError={setShowError}
-          content="Please Fill All Necessary Fields"
-        />
-      )}
-      <h1>Add New Tasks Here </h1>
-      <div className="newtask_container">
-        <input
-          type="text"
-          className="new_task"
-          placeholder="Type your new task here"
-          value={newTask}
-          onChange={(event) => setNewTask(event.target.value)}
-        />
+  if (showError) {
+    return (
+      <ErrorMessage
+        setShowError={setShowError}
+        content="Please Fill All Necessary Fields"
+      />
+    );
+  } else
+    return (
+      <div className="addtask_container">
+        <h1>Add New Tasks Here </h1>
+        <div className="newtask_container">
+          <input
+            type="text"
+            className="new_task"
+            placeholder="Type your new task here"
+            value={newTask}
+            onChange={(event) => setNewTask(event.target.value)}
+          />
+        </div>
+        <div>
+          <label for="birthday" className="date_label">
+            Date:
+          </label>
+          <input
+            type="date"
+            className="task-date"
+            value={date}
+            onChange={(event) => setDate(event.target.value)}
+          ></input>
+          <button className="add_button" onClick={handleClick}>
+            Add Task
+          </button>
+        </div>
       </div>
-      <div>
-        <label for="birthday" className="date_label">
-          Date:
-        </label>
-        <input
-          type="date"
-          className="task-date"
-          value={date}
-          onChange={(event) => setDate(event.target.value)}
-        ></input>
-        <button className="add_button" onClick={handleClick}>
-          Add Task
-        </button>
-      </div>
-    </div>
-  );
+    );
 }
 
 export default AddTask;

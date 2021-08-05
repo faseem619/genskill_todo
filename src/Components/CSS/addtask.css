@@ -37,8 +37,8 @@
 }
 .addtask_container:hover,
 .addtask_container:focus-within {
-  /* transform: rotate(0);
-  transform: scale(1.2); */
+  transform: rotate(0);
+  transform: scale(1.2);
   z-index: 1;
   box-shadow: 10px 10px 7px rgba(33, 33, 33, 0.55);
 }
