@@ -29,7 +29,6 @@
   width: 400px;
   height: 400px;
   padding-left: 10px;
-
   background-color: #feff9c;
   box-shadow: 7px 7px 9px rgba(33, 33, 33, 0.55);
   transform: rotate(-6deg);
@@ -88,5 +87,8 @@
   .addtask_container:hover,
   .addtask_container:focus-within {
     transform: none;
+  }
+  .close-btn {
+    font-size: 1rem;
   }
 }

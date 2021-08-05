@@ -6,7 +6,6 @@ nav {
   justify-content: space-evenly;
   min-height: 60px;
   align-items: center;
-  margin-bottom: 20px;
 }
 
 nav > h1 {
@@ -23,17 +22,62 @@ h2 {
   margin-right: 5px;
   margin-left: 5px;
 }
+.menu-btn {
+  display: none;
+  align-self: center;
+  font-size: 1.8rem;
+  transition: all 0.3s linear;
+}
+.menu-btn:hover {
+  transform: rotate(90deg);
+  cursor: pointer;
+}
+.nav-list-item {
+  display: block;
+  font-size: 1.1rem;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s linear;
+  font-weight: 200;
+}
+.nav-toggle {
+  display: block;
+  height: 0;
+  overflow: hidden;
+  transition: all 0.3s linear;
+  background-color: white;
+}
+.nav-list-item:hover {
+  padding-left: 2rem;
+  background-color: #a2d6f8;
+}
 @media screen and (max-width: 800px) {
   nav {
-    flex-direction: column;
-    align-items: flex-start;
+    justify-content: space-between;
+    padding: 0 5px;
   }
   nav > h1 {
     font-size: 1.8rem;
     align-self: center;
   }
   nav > h2 {
-    font-size: 1.3rem;
-    border-bottom-color: #111;
+    display: none;
+  }
+  .nav-list-item {
+    display: block;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+  }
+  .nav-toggle {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .show {
+    height: 83px;
+  }
+
+  .menu-btn {
+    display: block;
   }
 }
